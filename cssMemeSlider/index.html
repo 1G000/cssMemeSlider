@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <linkrel="stylesheet" href='./styles.css'>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="./styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>CSS MEME SLIDER</h1>
-</body>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="slider">
+        <div class="slides">
+          <input
+            type="radio"
+            class="radio-button"
+            name="radio"
+            id="s1"
+            checked
+          />
+          <input type="radio" class="radio-button" name="radio" id="s2" />
+          <input type="radio" class="radio-button" name="radio" id="s3" />
+          <input type="radio" class="radio-button" name="radio" id="s4" />
+
+          <div class="slide memes1">
+            <img src="./img/1.jpg" class="meme-img" alt="" />
+          </div>
+          <div class="slide">
+            <img src="./img/2.jpg" class="meme-img" alt="" />
+          </div>
+          <div class="slide">
+            <img src="./img/3.jpg" class="meme-img" alt="" />
+          </div>
+          <div class="slide">
+            <img src="./img/4.jpg" class="meme-img" alt="" />
+          </div>
+        </div>
+
+        <div class="nav">
+          <label for="s1" class="nav-item"></label>
+          <label for="s2" class="nav-item"></label>
+          <label for="s3" class="nav-item"></label>
+          <label for="s4" class="nav-item"></label>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
