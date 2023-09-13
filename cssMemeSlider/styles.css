@@ -16,35 +16,39 @@
 .slider {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   margin: auto 0;
   width: 60em;
   height: 30em;
-  /* background-color: tomato; */
   overflow: hidden;
 }
 
 .nav {
   display: flex;
-  width: 10em;
-  height: 2em;
-  margin: auto 0 1em 0;
+  justify-content: space-between;
+}
+
+.text-content {
+  align-self: center;
+  min-width: 47em;
 }
 
 .nav-item {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 2em;
-  width: 4em;
-  background-color: rgb(6, 63, 63);
-  margin: 0.5em;
-  border-radius: 30%;
+  width: 2em;
+  margin: 10px;
+  border-radius: 50%;
   cursor: pointer;
   opacity: 0.7;
   transition: all 0.3s ease-in-out;
+  padding: 5px;
 }
 
-.nav-item:hover {
-  opacity: 1;
-  transform: scale(1.1);
+.nav-item:hover div {
+  background-color: blue;
 }
 
 .radio-button {
@@ -67,16 +71,68 @@
   height: 100%;
 }
 
-#s1:checked ~ .memes1 {
+.div_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  border: 2px solid blue;
+  margin: 0;
+}
+
+.div_2 {
+  background-color: transparent;
+  height: 0.6em;
+  width: 0.6em;
+  border-radius: 50%;
+}
+
+#s1:checked ~ .slides > .memes1 {
   margin-left: 0;
 }
-#s2:checked ~ .memes1 {
+
+#s2:checked ~ .slides > .memes1 {
   margin-left: -25%;
 }
 
-#s3:checked ~ .memes1 {
+#s3:checked ~ .slides > .memes1 {
   margin-left: -50%;
 }
-#s4:checked ~ .memes1 {
+
+#s4:checked ~ .slides > .memes1 {
   margin-left: -75%;
+}
+
+#s1:checked ~ .nav label[for="s1"] .div_1 {
+  background-color: white;
+}
+
+#s1:checked ~ .nav label[for="s1"] .div_1 .div_2 {
+  background-color: blue;
+}
+
+#s2:checked ~ .nav label[for="s2"] .div_1 {
+  background-color: white;
+}
+
+#s2:checked ~ .nav label[for="s2"] .div_1 .div_2 {
+  background-color: blue;
+}
+
+#s3:checked ~ .nav label[for="s3"] .div_1 {
+  background-color: white;
+}
+
+#s3:checked ~ .nav label[for="s3"] .div_1 .div_2 {
+  background-color: blue;
+}
+
+#s4:checked ~ .nav label[for="s4"] .div_1 {
+  background-color: white;
+}
+
+#s4:checked ~ .nav label[for="s4"] .div_1 .div_2 {
+  background-color: blue;
 }
