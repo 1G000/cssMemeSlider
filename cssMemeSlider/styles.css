@@ -10,21 +10,22 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(254, 138, 246);
+  background-color: rgb(255, 235, 249);
 }
 
 .slider {
   display: flex;
   flex-direction: column;
-  margin: auto 0;
-  width: 40em;
-  height: 35em;
+  margin: 1em 2em auto 2em;
+  max-width: 27em;
+  height: 40em;
   overflow: hidden;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1em;
 }
 
 .text-content {
@@ -38,7 +39,7 @@
 
 .mem-text {
   font-weight: 700;
-  font-size: 1.3em;
+  font-size: 1.1em;
   min-width: 20em;
   transition: all 0.3s ease-in-out;
 }
@@ -58,12 +59,12 @@
   align-items: center;
   height: 2em;
   width: 2em;
-  margin: 10px;
+  margin: 1em 0.2em;
   border-radius: 50%;
   cursor: pointer;
   opacity: 0.7;
   transition: all 0.3s ease-in-out;
-  padding: 5px;
+  padding: 0.4em;
 }
 
 .nav-item:hover div {
@@ -84,22 +85,48 @@
 
 .slide {
   width: 25%;
+  height: 28em;
   transition: all 0.5s ease-in-out;
+  border: 0.1em solid yellow;
 }
 
 .slides {
   display: flex;
   width: 400%;
-  height: 80%;
+  height: 100%;
   margin-bottom: 2em;
 }
 
-.meme-img {
-  border: 2px solid yellow;
-  width: 100%;
-  height: 100%;
-  border-radius: 2em;
-  margin-top: 1em;
+.memes1 {
+  border-radius: 5%;
+  background: url("./img/1.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.memes2 {
+  border-radius: 5%;
+  background: url("./img/2.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.memes3 {
+  border-radius: 5%;
+  background: url("./img/3.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.memes4 {
+  border-radius: 5%;
+  background: url("./img/4.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .div_1 {
@@ -109,7 +136,7 @@
   height: 1em;
   width: 1em;
   border-radius: 50%;
-  border: 2px solid rgb(77, 6, 71);
+  border: 0.1em solid rgb(77, 6, 71);
   margin: 0;
 }
 
@@ -182,4 +209,65 @@
 
 #s4:checked ~ .nav label[for="s4"] .div_1 .div_2 {
   background-color: rgb(77, 6, 71);
+}
+
+@media screen and (max-width: 768px) {
+  .slides {
+    margin-bottom: 0em;
+  }
+
+  .nav {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: -8em;
+  }
+  .memes1 {
+    background: url("./img/11.jpg");
+    background-position: -2em 0;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .memes2 {
+    background: url("./img/12.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .memes3 {
+    background: url("./img/13.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .memes4 {
+    background: url("./img/14.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .slider {
+    min-width: 22em;
+    height: 38em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: -1em;
+  }
+  .mem-text {
+    margin-top: 1em;
+  }
+
+  .slider {
+    width: 22em;
+    height: 36em;
+    margin: auto 0.1em;
+  }
 }
