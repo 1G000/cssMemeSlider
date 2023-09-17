@@ -1,3 +1,237 @@
-.h1 {
-  color: tomato;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  margin: auto;
+}
+
+.container {
+  width: 90%;
+  max-width: 50em;
+  margin: auto;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 4em 0.5em 4em;
+  gap: 0.5em;
+}
+
+.slides-wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+  max-width: 50em;
+}
+
+.slide-container {
+  display: flex;
+  width: 100%;
+  max-height: 30em;
+  transition: all 0.5s ease-in-out;
+  margin: auto;
+}
+
+.slide {
+  width: 100%;
+  border: 0.1em solid rgb(77, 6, 71);
+  border-radius: 0.7em;
+  padding: 0.5em 0.5em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.text-block {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: row;
+  transition: all 0.3s ease-in-out;
+}
+
+.mem-text {
+  display: block;
+  font-weight: 700;
+  font-size: 1.7em;
+  max-width: 100%;
+  width: 35em;
+  transition: all 0.3s ease-in-out;
+  color: rgb(77, 6, 71);
+}
+
+.nav-items {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+}
+
+.nav-item {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  width: 2em;
+  margin: 0.2em 0.2em;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+  padding: 0.4em;
+}
+
+.nav-item:hover div {
+  background-color: rgb(77, 6, 71);
+}
+
+.nav-item:active div {
+  background-color: yellow;
+}
+
+.nav-item:checked :hover div {
+  border-color: yellow;
+}
+
+.nav-item:active .div_1 {
+  border: none;
+}
+
+.radio-button {
+  display: none;
+}
+
+.div_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  border: 0.1em solid rgb(77, 6, 71);
+  margin: 0;
+}
+
+.div_2 {
+  background-color: transparent;
+  height: 0.6em;
+  width: 0.6em;
+  border-radius: 50%;
+}
+
+#s1:checked ~ .slides-wrapper > .slide-container {
+  margin-left: 0;
+}
+
+#s2:checked ~ .slides-wrapper > .slide-container {
+  margin-left: -100%;
+}
+
+#s3:checked ~ .slides-wrapper > .slide-container {
+  margin-left: -200%;
+}
+#s4:checked ~ .slides-wrapper > .slide-container {
+  margin-left: -300%;
+}
+
+#s1:checked ~ .nav > .text-block > .text-content .mem-text {
+  transform: translateX(0);
+}
+
+#s2:checked ~ .nav > .text-block > .text-content .mem-text {
+  transform: translateX(-100%);
+}
+
+#s3:checked ~ .nav > .text-block > .text-content .mem-text {
+  transform: translateX(-200%);
+}
+
+#s4:checked ~ .nav > .text-block > .text-content .mem-text {
+  transform: translateX(-300%);
+}
+
+#s1:checked ~ .nav label[for="s1"] .div_1 {
+  background-color: transparent;
+}
+
+#s1:checked ~ .nav label[for="s1"] .div_1 .div_2 {
+  background-color: rgb(77, 6, 71);
+}
+
+#s2:checked ~ .nav label[for="s2"] .div_1 {
+  background-color: transparent;
+}
+
+#s2:checked ~ .nav label[for="s2"] .div_1 .div_2 {
+  background-color: rgb(77, 6, 71);
+}
+
+#s3:checked ~ .nav label[for="s3"] .div_1 {
+  background-color: transparent;
+}
+
+#s3:checked ~ .nav label[for="s3"] .div_1 .div_2 {
+  background-color: rgb(77, 6, 71);
+}
+
+#s4:checked ~ .nav label[for="s4"] .div_1 {
+  background-color: transparent;
+}
+
+#s4:checked ~ .nav label[for="s4"] .div_1 .div_2 {
+  background-color: rgb(77, 6, 71);
+}
+
+#s1:checked ~ .nav label[for="s1"]:hover div {
+  background-color: yellow;
+}
+#s2:checked ~ .nav label[for="s2"]:hover div {
+  background-color: yellow;
+}
+#s3:checked ~ .nav label[for="s3"]:hover div {
+  background-color: yellow;
+}
+#s4:checked ~ .nav label[for="s4"]:hover div {
+  background-color: yellow;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .nav-items {
+    justify-content: center;
+  }
+
+  .mem-text {
+    font-size: 1.4em;
+  }
+}
+@media screen and (max-width: 490px) {
+  .mem-text {
+    font-size: 0.8em;
+  }
 }

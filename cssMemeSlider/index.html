@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <linkrel="stylesheet" href='./styles.css'>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>CSS MEME SLIDER</h1>
-</body>
+  <head>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cssMemeSlider</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="slider">
+          <input
+            type="radio"
+            class="radio-button"
+            name="radio"
+            id="s1"
+            checked
+          />
+          <input type="radio" class="radio-button" name="radio" id="s2" />
+          <input type="radio" class="radio-button" name="radio" id="s3" />
+          <input type="radio" class="radio-button" name="radio" id="s4" />
+          <div class="slides-wrapper">
+            <div class="slide-container">
+              <img src="./img/3.jpg" class="slide" />
+              <img src="./img/2.jpg" class="slide" />
+              <img src="./img/1.jpg" class="slide" />
+              <img src="./img/4.jpg" class="slide" />
+            </div>
+          </div>
+
+          <div class="nav">
+            <div class="text-block">
+              <div class="text-content">
+                <p class="mem-text">Моя library-part3 :D</p>
+                <p class="mem-text">Признайтесь, что было :D</p>
+                <p class="mem-text">ChatGPT нас заменит :((</p>
+                <p class="mem-text">Возьмите все мои деньги!!!</p>
+              </div>
+            </div>
+            <div class="nav-items">
+              <label for="s1" class="nav-item">
+                <div class="div_1"><div class="div_2"></div></div>
+              </label>
+              <label for="s2" class="nav-item">
+                <div class="div_1"><div class="div_2"></div></div>
+              </label>
+              <label for="s3" class="nav-item">
+                <div class="div_1"><div class="div_2"></div></div>
+              </label>
+              <label for="s4" class="nav-item">
+                <div class="div_1"><div class="div_2"></div></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
