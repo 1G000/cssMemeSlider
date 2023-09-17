@@ -10,46 +10,79 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(255, 235, 249);
+  background-color: white;
+  margin: auto;
+}
+
+.container {
+  width: 90%;
+  max-width: 50em;
+  margin: auto;
 }
 
 .slider {
   display: flex;
   flex-direction: column;
-  margin: 1em 2em auto 2em;
-  max-width: 27em;
-  height: 40em;
+  margin: 1em 4em 0.5em 4em;
+  gap: 0.5em;
+}
+
+.slides-wrapper {
+  display: flex;
   overflow: hidden;
+  width: 100%;
+  margin: auto;
+  max-width: 50em;
+}
+
+.slide-container {
+  display: flex;
+  width: 100%;
+  max-height: 30em;
+  transition: all 0.5s ease-in-out;
+  margin: auto;
+}
+
+.slide {
+  width: 100%;
+  border: 0.1em solid rgb(77, 6, 71);
+  border-radius: 0.7em;
+  padding: 0.5em 0.5em;
 }
 
 .nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 1em;
-}
-
-.text-content {
-  width: 20em;
-  display: flex;
-  align-self: center;
-  color: rgb(77, 6, 71);
-  margin-left: 0em;
   overflow: hidden;
 }
 
-.mem-text {
-  font-weight: 700;
-  font-size: 1.1em;
-  min-width: 20em;
+.text-block {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: row;
   transition: all 0.3s ease-in-out;
 }
 
-.mem-text:first-child {
-  margin-left: -60em;
+.mem-text {
+  display: block;
+  font-weight: 700;
+  font-size: 1.7em;
+  max-width: 100%;
+  width: 35em;
+  transition: all 0.3s ease-in-out;
+  color: rgb(77, 6, 71);
 }
 
 .nav-items {
   display: flex;
+  justify-content: flex-end;
+  width: 30%;
 }
 
 .nav-item {
@@ -59,7 +92,7 @@
   align-items: center;
   height: 2em;
   width: 2em;
-  margin: 1em 0.2em;
+  margin: 0.2em 0.2em;
   border-radius: 50%;
   cursor: pointer;
   opacity: 0.7;
@@ -75,58 +108,16 @@
   background-color: yellow;
 }
 
+.nav-item:checked :hover div {
+  border-color: yellow;
+}
+
 .nav-item:active .div_1 {
   border: none;
 }
 
 .radio-button {
   display: none;
-}
-
-.slide {
-  width: 25%;
-  height: 28em;
-  transition: all 0.5s ease-in-out;
-  border: 0.1em solid yellow;
-}
-
-.slides {
-  display: flex;
-  width: 400%;
-  height: 100%;
-  margin-bottom: 2em;
-}
-
-.memes1 {
-  border-radius: 5%;
-  background: url("./img/1.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.memes2 {
-  border-radius: 5%;
-  background: url("./img/2.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.memes3 {
-  border-radius: 5%;
-  background: url("./img/3.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.memes4 {
-  border-radius: 5%;
-  background: url("./img/4.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .div_1 {
@@ -147,36 +138,35 @@
   border-radius: 50%;
 }
 
-#s1:checked ~ .slides > .memes1 {
+#s1:checked ~ .slides-wrapper > .slide-container {
   margin-left: 0;
 }
 
-#s1:checked ~ .nav > .text-content {
-  margin-left: 0em;
+#s2:checked ~ .slides-wrapper > .slide-container {
+  margin-left: -100%;
 }
 
-#s2:checked ~ .slides > .memes1 {
-  margin-left: -25%;
+#s3:checked ~ .slides-wrapper > .slide-container {
+  margin-left: -200%;
+}
+#s4:checked ~ .slides-wrapper > .slide-container {
+  margin-left: -300%;
 }
 
-#s2:checked ~ .nav > .text-content .mem-text:first-child {
-  margin-left: -40em;
+#s1:checked ~ .nav > .text-block > .text-content .mem-text {
+  transform: translateX(0);
 }
 
-#s3:checked ~ .slides > .memes1 {
-  margin-left: -50%;
+#s2:checked ~ .nav > .text-block > .text-content .mem-text {
+  transform: translateX(-100%);
 }
 
-#s3:checked ~ .nav > .text-content .mem-text:first-child {
-  margin-left: -20em;
+#s3:checked ~ .nav > .text-block > .text-content .mem-text {
+  transform: translateX(-200%);
 }
 
-#s4:checked ~ .slides > .memes1 {
-  margin-left: -75%;
-}
-
-#s4:checked ~ .nav > .text-content .mem-text:first-child {
-  margin-left: 0em;
+#s4:checked ~ .nav > .text-block > .text-content .mem-text {
+  transform: translateX(-300%);
 }
 
 #s1:checked ~ .nav label[for="s1"] .div_1 {
@@ -211,63 +201,37 @@
   background-color: rgb(77, 6, 71);
 }
 
-@media screen and (max-width: 768px) {
-  .slides {
-    margin-bottom: 0em;
-  }
-
-  .nav {
-    flex-direction: column-reverse;
-    align-items: center;
-    margin-top: -8em;
-  }
-  .memes1 {
-    background: url("./img/11.jpg");
-    background-position: -2em 0;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  .memes2 {
-    background: url("./img/12.jpg");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  .memes3 {
-    background: url("./img/13.jpg");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  .memes4 {
-    background: url("./img/14.jpg");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  .slider {
-    min-width: 22em;
-    height: 38em;
-  }
+#s1:checked ~ .nav label[for="s1"]:hover div {
+  background-color: yellow;
+}
+#s2:checked ~ .nav label[for="s2"]:hover div {
+  background-color: yellow;
+}
+#s3:checked ~ .nav label[for="s3"]:hover div {
+  background-color: yellow;
+}
+#s4:checked ~ .nav label[for="s4"]:hover div {
+  background-color: yellow;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .nav {
     flex-direction: column-reverse;
     align-items: center;
-    margin-top: -1em;
-  }
-  .mem-text {
-    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
   }
 
-  .slider {
-    width: 22em;
-    height: 36em;
-    margin: auto 0.1em;
+  .nav-items {
+    justify-content: center;
+  }
+
+  .mem-text {
+    font-size: 1.4em;
+  }
+}
+@media screen and (max-width: 490px) {
+  .mem-text {
+    font-size: 0.8em;
   }
 }
